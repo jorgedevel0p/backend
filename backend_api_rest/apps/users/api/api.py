@@ -1,11 +1,12 @@
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 from apps.users.models import User
 from apps.users.api.serializer import UserSerializer
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
+@permission_classes((IsAuthenticated, ))
 def user_api_view(request):
   
   # list resources
