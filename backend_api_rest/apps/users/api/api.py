@@ -6,7 +6,7 @@ from apps.users.models import User
 from apps.users.api.serializer import UserSerializer
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
-@permission_classes((IsAuthenticated, ))
+# @permission_classes((IsAuthenticated, ))
 def user_api_view(request):
   
   # list resources

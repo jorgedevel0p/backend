@@ -6,7 +6,7 @@ from apps.mesas.models import Mesa
 from apps.mesas.api.serializer import MesaSerializer
 
 @api_view(['GET', 'POST', 'PUT', 'DELETE'])
-@permission_classes((IsAuthenticated, ))
+# @permission_classes((IsAuthenticated, ))
 def mesa_api_view(request):
   
   # list resources
