@@ -32,7 +32,8 @@ LOCAL_APPS = [
 
 THIRD_APPS = [
     'rest_framework',
-    'pymysql'
+    'pymysql',
+    'corsheaders'
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
@@ -44,7 +45,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'backend_api_rest.urls'
@@ -118,3 +120,7 @@ REST_FRAMEWORK = {
     ],
     # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.isAuthenticated",)
 }
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
