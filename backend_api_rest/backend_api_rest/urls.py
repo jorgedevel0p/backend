@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.users.api.urls')),
     path('api/', include('apps.mesas.api.urls')),
+    path('api/', include('apps.productos.api.urls')),
 
     # path('api/token', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),

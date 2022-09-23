@@ -24,14 +24,16 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     ADMIN = 'Admin'
-    CASHER = 'Casher'
-    CHEF = 'Chef'
+    FINANZAS = 'Finanzas'
+    COCINA = 'Cocina'
+    BODEGA = 'Bodega'
     NORMAL = 'Normal'
 
     CHOICES = (
         (ADMIN, ADMIN),
-        (CASHER, CASHER),
-        (CHEF, CHEF),
+        (FINANZAS, FINANZAS),
+        (COCINA, COCINA),
+        (BODEGA, BODEGA),
         (NORMAL, NORMAL)
     )
 

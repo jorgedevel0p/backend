@@ -6,3 +6,10 @@ class Mesa(models.Model):
   number_name = models.CharField('Numero', max_length = 3)
   available = models.BooleanField(default = True)
   capacity = models.PositiveIntegerField()
+
+  class Meta:
+    verbose_name = 'Mesa'
+    verbose_name_plural = 'Mesas'
+
+  def __str__(self):
+    return {self.number_name}
