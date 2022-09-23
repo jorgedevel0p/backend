@@ -27,17 +27,17 @@ class User(AbstractBaseUser, PermissionsMixin):
     FINANZAS = 'Finanzas'
     COCINA = 'Cocina'
     BODEGA = 'Bodega'
-    NORMAL = 'Normal'
+    CLIENTE = 'Cliente'
 
     CHOICES = (
         (ADMIN, ADMIN),
         (FINANZAS, FINANZAS),
         (COCINA, COCINA),
         (BODEGA, BODEGA),
-        (NORMAL, NORMAL)
+        (CLIENTE, CLIENTE)
     )
 
-    type = models.CharField(max_length=20, choices=CHOICES, default=NORMAL)
+    type = models.CharField(max_length=20, choices=CHOICES, default=CLIENTE)
     
     username = models.CharField(max_length = 255, unique = True)
     email = models.EmailField('Correo Electrónico',max_length = 255, unique = True,)
