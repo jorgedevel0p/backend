@@ -7,7 +7,7 @@ class Producto(models.Model):
     name = models.CharField('Nombre', max_length=150)
     stock = models.PositiveIntegerField('Stock')
     expiration_date = models.DateField('Fecha de Vencimiento')
-    measure_unit = models.CharField('Unidad de Medida', max_length=50, blank=False, null=False, unique=True)
+    measure_unit = models.CharField('Unidad de Medida', max_length=50, blank=False, null=False, unique=False)
     category_product = models.CharField('Categoría de Producto', max_length=50, unique=False, null=False, blank=False)
 
     class Meta:
