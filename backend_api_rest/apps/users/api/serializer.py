@@ -15,3 +15,15 @@ class UserSerializer(serializers.ModelSerializer):
      user.set_password(validated_data['password'])
      user.save()
      return user
+
+  """ def update(self, instance, validated_data):
+    # encriptar password en el actualizar...
+     user = User(
+         email=validated_data['email'],
+         username=validated_data['username'],
+         password=validated_data['password']
+     )
+     
+     user.set_password(validated_data['password'])
+     user.save()
+     return user """
