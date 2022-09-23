@@ -29,13 +29,13 @@ BASE_APPS = [
 LOCAL_APPS = [
     'apps.users',
     'apps.mesas',
-    'apps.productos'
+    'apps.productos',
 ]
 
 THIRD_APPS = [
     'rest_framework',
     'pymysql',
-    'corsheaders'
+    'corsheaders',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend_api_rest.urls'
