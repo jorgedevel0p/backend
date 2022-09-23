@@ -11,20 +11,10 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User(
             email=validated_data['email'],
-            username=validated_data['username']
+            username=validated_data['username'],
+            name=validated_data['name'],
+            last_name=validated_data['last_name'],
         )
         user.set_password(validated_data['password'])
         user.save()
         return user
-
-    """ def update(self, instance, validated_data):
-    # encriptar password en el actualizar...
-     user = User(
-         email=validated_data['email'],
-         username=validated_data['username'],
-         password=validated_data['password']
-     )
-     
-     user.set_password(validated_data['password'])
-     user.save()
-     return user """
