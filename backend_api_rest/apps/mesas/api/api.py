@@ -12,7 +12,8 @@ def mesa_api_view(request):
   # list resources
   if request.method == 'GET':
     mesas = Mesa.objects.all()
-    mesas_serializer = MesaSerializer(mesas, many = True) # (many = True) ---> List of mesas, it expects only 1 object
+    mesas_serializer = MesaSerializer(mesas, many = True) 
+    # (many = True) ---> List of mesas, it expects only 1 object
     return Response(mesas_serializer.data, status.HTTP_200_OK)
 
   # create resource
