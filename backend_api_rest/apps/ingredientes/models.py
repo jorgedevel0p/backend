@@ -6,7 +6,7 @@ from apps.platos.models import Plato
 class Ingrediente(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     producto_id = models.ForeignKey("productos.Producto", on_delete=models.CASCADE, verbose_name='Producto ID')
-    plato_id = models.ForeignKey("platos.Plato", on_delete=models.CASCADE, verbose_name='Plato ID')
+    plato_id = models.ForeignKey("platos.Plato", related_name='ingredientes' ,on_delete=models.CASCADE, verbose_name='Plato ID')
     name = models.CharField('Nombre Ingrediente', max_length=150)
     quantity = models.PositiveIntegerField('Cantidad INgrediente')
 
