@@ -32,6 +32,10 @@ urlpatterns = [
     path('api/', include('apps.ordenes.api.urls')),
     path('api/', include('apps.platos.api.urls')),
     path('api/', include('apps.proveedores.api.urls')),
+    path('api/', include('apps.reservas.api.urls')),
+    path('api/', include('apps.facturas.api.urls')),
+    path('api/', include('apps.movimientos_caja.api.urls')),
+    path('api/', include('apps.pedidos_proveedor.api.urls')),
 
     # path('api/token', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),

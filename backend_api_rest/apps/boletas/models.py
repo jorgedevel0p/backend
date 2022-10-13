@@ -5,8 +5,8 @@ from apps.users.models import User
 # Create your models here.
 class Boleta(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
-    user_id = models.ForeignKey("users.User", on_delete=models.CASCADE, verbose_name='Usuario ID')
-    orden_id = models.ForeignKey('ordenes.Orden', on_delete=models.CASCADE, verbose_name='Orden ID')
+    user = models.ForeignKey("users.User", on_delete=models.CASCADE, verbose_name='Usuario ID')
+    orden = models.ForeignKey('ordenes.Orden', related_name="Boletas", on_delete=models.CASCADE, verbose_name='Orden ID')
     value = models.PositiveIntegerField('Valor')
     tip = models.PositiveIntegerField('Propina')
     payment_method = models.CharField('Método de Pago', max_length=150)

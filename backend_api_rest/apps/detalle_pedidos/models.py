@@ -4,7 +4,8 @@ from apps.productos.models import Producto
 # Create your models here.
 class DetallePedido(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
-    producto_id = models.ForeignKey("productos.Producto", on_delete=models.CASCADE, verbose_name='Producto ID' )
+    producto = models.ForeignKey("productos.Producto", on_delete=models.CASCADE, verbose_name='Producto ID' )
+    pedido_proveedor = models.OneToOneField("pedidos_proveedor.PedidoProveedor", on_delete=models.CASCADE, verbose_name='Pedido Proveedor ID')
     value =  models.PositiveIntegerField('Valor Producto')
     quantity = models.IntegerField('Cantidad Producto')
 
@@ -12,5 +13,5 @@ class DetallePedido(models.Model):
         verbose_name = 'Detalle Pedido'
         verbose_name_plural = 'Detalle Pedidos'
 
-        def __str__(self):
-            return f'Detalle Pedido ID {self.id}'
+    def __str__(self):
+        return f'Detalle Pedido ID {self.id}'
