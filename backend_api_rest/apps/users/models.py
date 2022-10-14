@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         (CLIENTE, CLIENTE)
     )
 
-    type = models.CharField(max_length=20, choices=CHOICES, default=CLIENTE)
+    type_user = models.CharField(max_length=20, choices=CHOICES, default=CLIENTE)
     
     username = models.CharField(max_length = 255, unique = True)
     email = models.EmailField('Correo Electrónico',max_length = 255, unique = True,)
