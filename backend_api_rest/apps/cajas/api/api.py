@@ -41,7 +41,7 @@ def caja_detail_api_view(request, pk=None):
 
   # update resource
   if request.method == 'PUT':
-    caja_serializer = MesaSerializer(caja, data = request.data)
+    caja_serializer = CajaSerializer(caja, data = request.data)
     if caja_serializer.is_valid():
       caja_serializer.save()
       return Response(caja_serializer.data, status.HTTP_200_OK)
@@ -51,7 +51,7 @@ def caja_detail_api_view(request, pk=None):
   # delete resource
   if request.method == 'DELETE':
     caja.delete() 
-    return Response({'message': 'Mesa has been deleted successfully!'}, status = status.HTTP_200_OK)
+    return Response({'message': 'Caja has been deleted successfully!'}, status = status.HTTP_200_OK)
   
   
     
