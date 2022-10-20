@@ -16,4 +16,4 @@ class DetalleOrden(models.Model):
         verbose_name_plural='Detalle Ordenes'
 
     def __str__(self):
-        return f'Detalle Orden ID: {self.id}'
+        return f'Detalle Orden ID: {self.DetalleOrden}'

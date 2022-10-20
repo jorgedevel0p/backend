@@ -7,12 +7,12 @@ class Boleta(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     user = models.ForeignKey("users.User", on_delete=models.CASCADE, verbose_name='Usuario ID')
     orden = models.ForeignKey('ordenes.Orden', related_name="boletas", on_delete=models.CASCADE, verbose_name='Orden ID')
-    value = models.PositiveIntegerField('Valor')
-    tip = models.PositiveIntegerField('Propina')
-    payment_method = models.CharField('Método de Pago', max_length=150)
-    date = models.DateField('Fecha')
-    time = models.TimeField('Hora')
-    state = models.CharField('Estado de Pago', max_length=150)
+    value = models.PositiveIntegerField()
+    tip = models.PositiveIntegerField()
+    payment_method = models.CharField(max_length=150)
+    date = models.DateField()
+    time = models.TimeField()
+    state = models.CharField(max_length=150)
 
     class Meta:
         verbose_name='Boleta'

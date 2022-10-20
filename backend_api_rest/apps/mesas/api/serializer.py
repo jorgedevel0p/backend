@@ -5,4 +5,5 @@ class MesaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mesa
         fields = '__all__'
+        # fields = ['id', 'number_people', 'capacity', 'available','user_id']
         

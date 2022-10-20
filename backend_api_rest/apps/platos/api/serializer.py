@@ -6,7 +6,7 @@ from rest_framework import serializers
 class IngredienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ingrediente
-        fields = ['id', 'name']
+        fields = ['id', 'name_ingredient']
 
 class DetalleOrdenSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,4 +19,4 @@ class PlatoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Plato
-        fields = ['name', 'description', 'ingredientes', 'detalle_ordenes_plato']
+        fields = ['id','name', 'description', 'ingredientes', 'detalle_ordenes_plato','recipe','value','type_dish']

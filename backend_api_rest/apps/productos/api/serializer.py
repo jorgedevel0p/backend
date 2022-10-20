@@ -11,4 +11,4 @@ class ProductoSerializer(serializers.ModelSerializer):
     detalle_ordenes_producto = DetalleOrdenSerializer(many=True, read_only=True)
     class Meta:
         model = Producto
-        fields = ['is','name','detalle_ordenes_producto']
+        fields = ['id','name','detalle_ordenes_producto', 'entry_date', 'stock', 'expiration_date', 'value', 'brand']
