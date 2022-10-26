@@ -1,3 +1,5 @@
+from pyexpat import model
+from unittest.util import _MAX_LENGTH
 from django.db import models
 
 # Create your models here.
@@ -8,6 +10,7 @@ class Plato(models.Model):
     recipe = models.TextField()
     value = models.PositiveIntegerField()
     type_dish = models.CharField(max_length=150) 
+    image_plato = models.URLField(max_length=250)
 
     class Meta:
         verbose_name = 'Plato'
