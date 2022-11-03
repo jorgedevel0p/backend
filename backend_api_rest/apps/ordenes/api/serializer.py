@@ -11,4 +11,4 @@ class OrdenSerializer(serializers.ModelSerializer):
     boletas = BoletaSerializer(many=True, read_only=True)
     class Meta:
         model = Orden
-        fields = ['id', 'boletas','time','mesa','date','number_people','state']
+        fields = ['id', 'boletas','start_time','end_time','mesa','date','number_people','state']
