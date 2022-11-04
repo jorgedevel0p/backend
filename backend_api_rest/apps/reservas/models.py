@@ -8,8 +8,7 @@ class Reserva(models.Model):
     user = models.ForeignKey("users.User", on_delete=models.CASCADE, verbose_name="Usuario ID")
     mesa = models.ForeignKey("mesas.Mesa", on_delete=models.CASCADE, verbose_name="Mesa ID")
     status = models.CharField('Estado', max_length=100)
-    date = models.DateField('Fecha')
-    time = models.TimeField('Hora')
+    date = models.DateTimeField('Fecha')
 
     class Meta:
         verbose_name= 'Reserva'

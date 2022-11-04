@@ -6,8 +6,8 @@ class Orden(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     mesa = models.ForeignKey("mesas.Mesa", on_delete=models.CASCADE, verbose_name='Mesa ID')
     date = models.DateField('Fecha')
-    start_time = models.TimeField('Hora Inicio')
-    end_time = models.TimeField('Hora Termino')
+    start_time = models.DateTimeField('Hora Inicio')
+    end_time = models.DateTimeField('Hora Termino')
     number_people = models.PositiveIntegerField('Número de Personas')
     state = models.BooleanField('Disponibilidad', default=True)
     
