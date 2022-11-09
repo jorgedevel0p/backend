@@ -10,7 +10,8 @@ class Boleta(models.Model):
     value = models.PositiveIntegerField()
     tip = models.PositiveIntegerField()
     payment_method = models.CharField(max_length=150)
-    date = models.DateTimeField
+    date = models.DateField()
+    time = models.TimeField()
     state = models.CharField(max_length=150)
 
     class Meta:

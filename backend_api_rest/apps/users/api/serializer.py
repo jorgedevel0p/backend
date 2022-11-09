@@ -1,11 +1,18 @@
 from rest_framework import serializers
 from apps.users.models import User
+from apps.reservas.models import Reserva
+
+class ReservaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reserva
+        fields = ['id','status','date','time']
 
 
 class UserSerializer(serializers.ModelSerializer):
+    reservas_usuario = ReservaSerializer(many=True, read_only=True)
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['id','username','reservas_usuario','name','last_name','email']
         # fields = ['name', 'last_name', '...']
 
     def create(self, validated_data):

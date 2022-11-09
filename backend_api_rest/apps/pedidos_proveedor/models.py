@@ -5,9 +5,12 @@ from apps.proveedores.models import Proveedor
 class PedidoProveedor(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     proveedor = models.ForeignKey("proveedores.Proveedor", on_delete=models.CASCADE)
-    date = models.DateTimeField('Fecha')
+    # date = models.DateTimeField('Fecha')
     total_value = models.PositiveIntegerField('Valor Total')
     state = models.CharField('Estado de Pago', max_length=150)
+    date = models.DateField(verbose_name='Fecha')
+    time = models.TimeField(verbose_name='Hora')
+             
 
     class Meta:
         verbose_name = 'Pedido Proveedor'
