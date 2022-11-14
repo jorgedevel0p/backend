@@ -10,6 +10,7 @@ class Reserva(models.Model):
     status = models.CharField('Estado', max_length=100)
     date = models.DateField('Fecha')
     time = models.TimeField('Time')
+    date_reserva = models.DateTimeField('Fecha y Hora')
 
     class Meta:
         verbose_name= 'Reserva'
