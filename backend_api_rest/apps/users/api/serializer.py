@@ -5,7 +5,7 @@ from apps.reservas.models import Reserva
 class ReservaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reserva
-        fields = ['id','status','date','time']
+        fields = ['id','status','date','time', 'mesa']
 
 
 class UserSerializer(serializers.ModelSerializer):
