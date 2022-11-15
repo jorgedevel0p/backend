@@ -6,7 +6,7 @@ from apps.mesas.models import Mesa
 class Reserva(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     user = models.ForeignKey("users.User", related_name="reservas_usuario", on_delete=models.CASCADE, verbose_name="Usuario ID")
-    mesa = models.ForeignKey("mesas.Mesa", on_delete=models.CASCADE, verbose_name="Mesa ID")
+    mesa = models.ForeignKey("mesas.Mesa", related_name="reservas_mesa", on_delete=models.CASCADE, verbose_name="Mesa ID")
     status = models.CharField('Estado', max_length=100)
     date = models.DateField('Fecha')
     time = models.TimeField('Time')

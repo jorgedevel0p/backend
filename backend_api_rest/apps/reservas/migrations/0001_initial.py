@@ -20,6 +20,9 @@ class Migration(migrations.Migration):
                 ('status', models.CharField(max_length=100, verbose_name='Estado')),
                 ('date', models.DateField(verbose_name='Fecha')),
                 ('time', models.TimeField(verbose_name='Hora')),
+                ('date_reserva', models.DateTimeField(verbose_name='Fecha y Hora')),
+                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='users.user', verbose_name='Usuario ID')),
+            
                 ('mesa', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='mesas.mesa', verbose_name='Mesa ID')),
             ],
             options={
