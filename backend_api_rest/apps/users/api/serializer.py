@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
     reservas_usuario = ReservaSerializer(many=True, read_only=True)
     class Meta:
         model = User
-        fields = ['id','username','reservas_usuario','name','last_name','email']
+        fields = ['id','username','reservas_usuario','name','last_name','email', 'type']
         # fields = ['name', 'last_name', '...']
 
     def create(self, validated_data):
