@@ -10,8 +10,8 @@ class Plato(models.Model):
     recipe = models.TextField()
     value = models.PositiveIntegerField()
     type_dish = models.CharField(max_length=150)
-    image_plato = models.URLField(max_length=250)
-    score = models.PositiveIntegerField('Puntaje')
+    image_plato = models.CharField(max_length=450)
+    score = models.PositiveIntegerField()
 
     class Meta:
         verbose_name = 'Plato'
