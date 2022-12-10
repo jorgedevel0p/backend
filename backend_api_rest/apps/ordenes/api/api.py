@@ -23,8 +23,8 @@ def orden_api_view(request):
         if (orden_serializer.is_valid()):
             orden_serializer.save()
             print(orden_serializer.data)
-            return Response(f'Orden has been created successfully! {orden_serializer.data}', status=status.HTTP_200_OK)
-        return Response(orden_serializer.errors, status.HTTP_201_CREATED)
+            return Response(orden_serializer.data, status=status.HTTP_200_OK)
+        return Response(orden_serializer.errors, status.HTTP_200_OK)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])

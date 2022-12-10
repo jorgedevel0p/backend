@@ -23,7 +23,7 @@ def plato_api_view(request):
       plato_serializer.save()
       return Response({'message': 'Plato has been created successfully!'}, status = status.HTTP_200_OK)
     
-    return Response(plato_serializer.errors, status.HTTP_400_BAD_REQUEST)
+    return Response(plato_serializer.errors, status.HTTP_200_OK)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
