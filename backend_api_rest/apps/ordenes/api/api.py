@@ -19,11 +19,11 @@ def orden_api_view(request):
 
     # create resource
     if request.method == 'POST':
-        orden_serializer = OrdenSerializer(
-            data=request.data)  # get json and compare to model
+        orden_serializer = OrdenSerializer(data=request.data)  # get json and compare to model
         if (orden_serializer.is_valid()):
             orden_serializer.save()
-            return Response({'message': 'Orden has been created successfully!'}, status=status.HTTP_200_OK)
+            print(orden_serializer.data)
+            return Response(f'Orden has been created successfully! {orden_serializer.data}', status=status.HTTP_200_OK)
         return Response(orden_serializer.errors, status.HTTP_201_CREATED)
 
 

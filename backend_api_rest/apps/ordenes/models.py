@@ -5,7 +5,7 @@ from apps.mesas.models import Mesa
 class Orden(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     mesa = models.ForeignKey("mesas.Mesa", on_delete=models.CASCADE, verbose_name='Mesa ID')
-    date = models.DateField('Fecha')
+    date = models.DateTimeField('Fecha')
     start_time = models.TimeField('Hora Inicio')
     end_time = models.TimeField('Hora Termino')
     number_people = models.PositiveIntegerField('Número de Personas')
